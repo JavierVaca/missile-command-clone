@@ -8,27 +8,29 @@ public class MissileManager : MonoBehaviour
 {
     private List<Missile> inactiveMissiles;
     private List<Missile> activeMissiles;
-    
-    [SerializeField]
-    public GameObject[] missilePrefabs;
+    private Missile[] missilePrefabs;
+
+    public void AddPrefabs(Missile[] prefabs)
+    {
+        missilePrefabs = prefabs;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         inactiveMissiles = new List<Missile>();
         activeMissiles = new List<Missile>();
-        InvokeRepeating("LaunchMissile", 2.0f, 0.3f);
         InstantiateMissiles();
     }
 
     // Update is called once per frame
     void Update()
     {
-        foreach(Missile m in activeMissiles)
+        for(int i = 0; i < activeMissiles.Count; i++)
         {
-            if(m.exploded)
+            if(activeMissiles[i].exploded)
             {
-                SetInactive(m);
+                SetInactive(activeMissiles[i]);
             }
         }
         
@@ -37,7 +39,7 @@ public class MissileManager : MonoBehaviour
     void InstantiateMissiles()
     {
         //Iterate all missile prefabs
-        for(int i = 0; i <= missilePrefabs.Length; i++)
+        for(int i = 0; i < missilePrefabs.Length; i++)
         {
             //Create multiple copies of each prefa, ideally each missile would 
             // proportinally to likeliness of each missile appearing 
@@ -45,7 +47,7 @@ public class MissileManager : MonoBehaviour
             for(int j = 0; j <= 10; j++)
             {
                 Missile missile =  Instantiate(missilePrefabs[i]);
-                missile.SetActive(false);
+                missile.gameObject.SetActive(false);
                 inactiveMissiles.Add(missile);
             }
         }
@@ -58,9 +60,12 @@ public class MissileManager : MonoBehaviour
         inactiveMissiles.Add(m);
     }
 
-    void LaunchMissile()
+    public void LaunchMissile(Vector2 direction, Vector2 position)
     {
        Missile missile = inactiveMissiles[0];
-       missile.LaunchMissile(Vector3.up);
+       missile.gameObject.SetActive(true);
+       missile.LaunchMissile(direction, position);
+       inactiveMissiles.Remove(missile);
+       activeMissiles.Add(missile);
     }
 }

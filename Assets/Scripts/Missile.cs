@@ -18,8 +18,9 @@ public class Missile : MonoBehaviour
         exploded = false;
     }
 
-    public void LaunchMissile(Vector3 direction)
+    public void LaunchMissile(Vector2 direction, Vector2 position)
     {
+        gameObject.transform.position = position;
         missileDirection = direction;
         exploded = false;
     }
