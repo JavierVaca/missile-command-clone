@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 3361289146915669054}
   - component: {fileID: 8477733236929285361}
   - component: {fileID: 4936682167573466076}
-  - component: {fileID: 6158550479407978899}
   - component: {fileID: 4343872806924681003}
+  - component: {fileID: 2343890753244642721}
   m_Layer: 0
   m_Name: playerMissile
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,7 +93,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7088751355119049377}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -106,20 +106,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6158550479407978899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7088751355119049377}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c28b46e80c966a3b9518eec3e50c82f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  exploded: 0
-  speed: 0
 --- !u!61 &4343872806924681003
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -146,3 +132,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.35, y: 1.02}
   m_EdgeRadius: 0
+--- !u!114 &2343890753244642721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7088751355119049377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10b67c877b17f25e7afb2072c1c62630, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exploded: 0
+  speed: 5

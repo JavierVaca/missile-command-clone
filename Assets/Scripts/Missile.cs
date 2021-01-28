@@ -26,12 +26,18 @@ public class Missile : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
         rb2d.velocity = missileDirection * speed;
     }
 
-    void OnTriggerEnter2D(Collider2D other) {
+    public virtual void OnTriggerEnter2D(Collider2D other) {
+        ManageTrigger();
+    }
+
+    //Implemented this way because inheritance doesnt always work on monobehaviours methods
+    public virtual void ManageTrigger()
+    {
         exploded = true;
     }
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3575920991975560749}
   - component: {fileID: 3575920991975560750}
   - component: {fileID: 4244961931909495640}
+  - component: {fileID: 9184503570363008988}
   m_Layer: 0
   m_Name: pyramid
   m_TagString: Untagged
@@ -109,3 +110,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.04, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &9184503570363008988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3575920991975560751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d60e92e8a262c06b8cad5e3d42869e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

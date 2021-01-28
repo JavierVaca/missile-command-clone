@@ -24,6 +24,7 @@ public class EnemyController : MonoBehaviour
 
     void LaunchMissile()
     {
+        //Optimize by caching the corners from screen to worldposition, to avoid screentoworldpoint
         Vector3 screenPointStart = new Vector3(Random.Range(0, maxWidth), maxHeight);
         Vector2 worldPointStart = camera.ScreenToWorldPoint(screenPointStart);
         Vector3 screenPointEnd = new Vector3(Random.Range(0, maxWidth), 0);
