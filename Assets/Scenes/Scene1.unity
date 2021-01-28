@@ -210,7 +210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   missilePrefabs:
-  - {fileID: 6158550479407978899, guid: 658558cbdb09f532da9db343a4701c4f, type: 3}
+  - {fileID: 2343890753244642721, guid: 658558cbdb09f532da9db343a4701c4f, type: 3}
 --- !u!4 &1454649771
 Transform:
   m_ObjectHideFlags: 0
